@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="ImageScaling.UwpApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ImageScaling.UwpApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <Border.Background>
+                <ImageBrush x:Name="Original" Stretch="None" />
+            </Border.Background>
+        </Border>
+
+
+        <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <Border.Background>
+                <ImageBrush x:Name="ScaledImageBrush1" Stretch="None" />
+            </Border.Background>
+        </Border>
+
+
+        <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="1" Margin="10">
+            <Border.Background>
+                <ImageBrush x:Name="ScaledImageBrush2" Stretch="None" />
+            </Border.Background>
+        </Border>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="10" Padding="10">
+            <TextBox x:Name="ScaleTextBox" Text="2" />
+            <Button x:Name="SelectImageButton" Click="SelectImageButton_OnClick" Content="Select image" />
+        </StackPanel>
+    </Grid>
+</Page>
